@@ -20,10 +20,10 @@ def create_ec2():
 # create_ec2()
 
 
-def create_s3():
+def create_s3(name):
     s3_client = boto3.client('s3', region_name='ap-southeast-1')
     location = {'LocationConstraint': 'ap-southeast-1'}
-    s3_client.create_bucket(Bucket='s3shravanb01', CreateBucketConfiguration=location)
+    s3_client.create_bucket(Bucket=name, CreateBucketConfiguration=location)
 
 
-# create_s3()
+create_s3('s3shravan01')

@@ -29,3 +29,10 @@ import boto3
 
 client = boto3.client('iam')
 ```
+
+sudo yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+sudo yum install -y mysql-community-server
+sudo systemctl start mysqld 
+sudo systemctl enable mysqld 
+
+!fxGIaljg2SN

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shop</title>
+    </head>
+
+    <body>
+    <form action="/modify" method ="post">
+        <button type="submit" name="backup" value="backup">BACKUP</button>
+        <button type="submit" name="restore" value="restore">RESTORE</button>
+    </form>
+    <hr>
+    {% for dict in htmlList %}
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <th style="width: 10%; text-align: left;">{{ dict.get('id') }}</th>
+                <th style="width: 60%; text-align: centre;">{{ dict.get('title').upper() }}</th>
+                <th style="width: 20%; text-align: right;">{{ dict.get('category').upper() }}</th>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <td style="width: 70%;"></td>
+                <td style="width: 15%; text-align: right;">RATING {{ dict.get('rating_rate') }}</td>
+                <td style="width: 15%; text-align: right;">Number of Reviews {{ dict.get('rating_count') }}</td>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <td style="width: 40%;"><img style="display: block; margin-left: auto; margin-right: auto;" src = {{ dict.get('image') }} alt="" width="250" height="250" /></td>
+                <td style="width: 60%; text-align: centre;">{{ dict.get('description') }}</td>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <td style="width: 45%;"></td>
+                <td style="width: 45%; text-align: right;"><strong>Price :</strong></td>
+                <td style="width: 10%;"><strong>{{dict.get('price')}}</strong></td>
+            </tr>
+        </table>
+        <form action="/modify" method ="post">
+            <button type="submit" name="update" value={{ dict.get('id') }}> UPDATE </button>
+            <button type="submit" name="delete" value={{ dict.get('id') }}> DELETE </button>
+        </form>
+        <br>
+        <hr>
+    {% endfor %}
+    </body>
+</html>

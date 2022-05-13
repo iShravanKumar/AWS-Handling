@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shop</title>
+    </head>
+
+    <body>
+    <hr>
+    {% for dict in htmlList %}
+        <form action="/update_db" method ="post">
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <th style="width: 10%; text-align: left;">{{ dict.get('id') }}</th>
+                <th style="width: 60%; text-align: centre;">{{ dict.get('title').upper() }}</th>
+                <th style="width: 20%; text-align: right;">{{ dict.get('category').upper() }}</th>
+            </tr>
+        </table>
+            <br>
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <td style="width: 70%;"></td>
+                <td style="width: 15%; text-align: right;">New RATING<br><input type="number" id="rating_rate" name="rating_rate" step=".1" placeholder="5.0" value="5.0" /></td>
+                <td style="width: 15%; text-align: right;">New Number of Reviews<br><input type="number" id="rating_count" name="rating_count" placeholder="1" value="1" /></td>
+            </tr>
+        </table>
+            <br>
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <td style="width: 40%;"><img style="display: block; margin-left: auto; margin-right: auto;" src = {{ dict.get('image') }} alt="" width="250" height="250" /></td>
+                <td style="width: 60%; text-align: centre;"><textarea  type="text" id="description" name="description" rows="10" cols="50">New Product Description</textarea></td>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse;" border="0">
+            <tr>
+                <td style="width: 90%;"></td>
+                <td style="width: 10%;"><strong>New PRICE<br><input type="number" id="price" name="price" step=".01" placeholder="100.00" value="100.00" /></strong></td>
+            </tr>
+        </table>
+            <button type="submit" name="update" value={{ dict.get('id') }}> UPDATE </button>
+        <br>
+        <hr>
+        </form>
+    {% endfor %}
+    </body>
+</html>
