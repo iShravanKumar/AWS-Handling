@@ -7,8 +7,8 @@ app = Flask(__name__)
 crud = CRUD()
 database_name = 'fakestore'
 table_name = 'data'
-db_user = 'shravan'
-db_pwd = 'Vvu8z9D'
+db_user = 'root'
+db_pwd = '!fxGIaljg2SN'
 
 
 def csv_ingress(csv_dataframe):
@@ -196,4 +196,4 @@ def update():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=int("5000"))
+    app.run(host="0.0.0.0", port=int("5000"))

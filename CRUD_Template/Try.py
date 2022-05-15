@@ -11,4 +11,4 @@ def upload():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=int("5000"))
+    app.run(host="13.215.174.181", port=int("5000"))
